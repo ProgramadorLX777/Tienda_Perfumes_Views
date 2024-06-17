@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partials/head.ejs') %>
+
+    <body style="background-color:#74BCDE">
+        <div class="container">
+            <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const cboGenero = document.querySelector('[name="cbo_genero_producto"]');
+                const perfumesHombre = document.getElementById('perfumesHombre');
+                const perfumesMujer = document.getElementById('perfumesMujer');
+    
+                cboGenero.addEventListener('change', function () {
+                    if (cboGenero.value === 'hombre') {
+                        perfumesHombre.style.display = 'block';
+                        perfumesMujer.style.display = 'none';
+                    } else if (cboGenero.value === 'mujer') {
+                        perfumesHombre.style.display = 'none';
+                        perfumesMujer.style.display = 'block';
+                    } else {
+                        perfumesHombre.style.display = 'none';
+                        perfumesMujer.style.display = 'none';
+                    }
+                });
+            });
+        </script>
+
+            <%- include('partials/navbar.ejs') %><br><br><br>
+
+            <h1>Comprar Productos</h1><br>
+            <div class="card" style="width: 1000;">
+                <div class="card-body">
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-3">
+                            <label for="validationCustom04"
+                                class="form-label">Género
+                                del Perfume: </label>
+                            <select class="form-select" id="validationCustom04"
+                                name="cbo_genero_producto" required>
+                                <option selected disabled value>Seleccione:
+                                </option>
+                                <option value="hombre">Para Hombre</option>
+                                <option value="mujer">Para Mujer</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid state.
+                            </div>
+                        </div>
+                        <div class="col-md-3" id="perfumesHombre">
+                            <label for="validationCustom04"
+                                class="form-label">Nombre
+                                del Perfume: </label>
+                            <select class="form-select" id="validationCustom04"
+                                name="cbo_nombre_producto" required>
+                                <option selected disabled value>Seleccione:
+                                </option>
+                                <option>Acqua Di Gio Profondo</option>
+                                <option>Invictus</option>
+                                <option>Bad Boy</option>
+                                <option>Le Beau</option>
+                                <option>We are tribe</option>
+                                <option>phantom</option>
+                                <option>Halloween Man</option>
+                                <option>Sauvage Elixir</option>
+                                <option>Toy Boy</option>
+                                <option>Stronger With You</option>
+                                <option>XS Black</option>
+                                <option>Ultra Male</option>
+                                <option>Eros</option>
+                                <option>Valentino Born in Roma</option>
+                                <option>Boss Bottled</option>
+                                <option>Invictus Intense</option>
+                                <option>One Million Prive</option>
+
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid state.
+                            </div>
+                        </div>
+                        <div class="col-md-3" id="perfumesMujer"
+                            style="display: none;">
+                            <label for="validationCustom04"
+                                class="form-label">Nombre
+                                del Perfume: </label>
+                            <select class="form-select" id="validationCustom04"
+                                name="cbo_nombre_producto" required>
+                                <option selected disabled value>Seleccione:
+                                </option>
+                                <option>Amor Amor</option>
+                                <option>Ange ou Démon</option>
+                                <option>Carolina Herrera</option>
+                                <option>Code Armani</option>
+                                <option>Eternity</option>
+                                <option>Eros Pour Femme</option>
+                                <option>Euphoria</option>
+                                <option>Good Girl</option>
+                                <option>Fame</option>
+                                <option>Lady Million</option>
+                                <option>Very Good Girl</option>
+                                <option>212 Heroes</option>
+                                <option>My Way</option>
+                                <option>Poison Hypnotic</option>
+                                <option>The One</option>
+                                <option>Yes I am</option>
+                                <option>Ultraviolet</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid state.
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="validationCustom04"
+                                class="form-label">Cantidad
+                                ML a comprar: </label>
+                            <select class="form-select" id="validationCustom04"
+                                name="cbo_cantidad_ml_producto" required>
+                                <option selected disabled value>Seleccione:
+                                </option>
+                                <option>50ml</option>
+                                <option>100ml</option>
+                                <option>150ml</option>
+                                <option>200ml</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid state.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                    value
+                                    id="invalidCheck" required>
+                                <label class="form-check-label"
+                                    for="invalidCheck">
+                                    Acepto los términos y condiciones de la
+                                    compra del
+                                    producto.
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree before submitting.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary"
+                                type="submit">Comprar
+                                producto</button>
+                        </div>
+                    </div>
+                </div><br>
+
+                <nav class="navbar bg-body-tertiary">
+                    <div class="container-fluid">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search"
+                                placeholder="Ingrese ID producto: "
+                                aria-label="Search" style="width: 90%;">
+                            <button class="btn btn-outline-success"
+                                type="submit">Buscar</button><br><br>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Género</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Cantidad ML</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Para Hombre</td>
+                                        <td>Acqua Di Gio Profondo</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Para Mujer</td>
+                                        <td>Amor amor</td>
+                                        <td>50</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Para Mujer</td>
+                                        <td>The One</td>
+                                        <td>200</td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+                            <div class="button-container">
+                                <button type="button"
+                                    class="btn btn-success">Actualizar
+                                    producto</button>
+                                <button type="button"
+                                    class="btn btn-danger">Eliminar
+                                    Producto</button>
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+
+            </form>
+        </div>
+    </body><br>
+
+    <%- include ('partials/footer.ejs')%>
+
+</html>
